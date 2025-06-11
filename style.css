@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f4f4;
+  font-size: 24px; /* Very large base font */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1600px; /* Full screen wide */
+  margin: auto;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 45%;
+  background: #165a96;
+  color: white;
+  padding: 60px;
+  box-sizing: border-box;
+  min-width: 400px;
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  display: block;
+  margin: 0 auto 40px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.sidebar h2, .sidebar h3 {
+  text-align: center;
+  font-size: 32px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 18px;
+  font-size: 24px;
+}
+
+.main {
+  width: 55%;
+  padding: 60px;
+  background: white;
+  box-sizing: border-box;
+  box-shadow: -4px 0 16px rgba(0,0,0,0.15);
+  min-width: 600px;
+}
+
+section {
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  color: #165a96;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #165a96;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+}
+
+h2::before {
+  content: "\1F4CC\0020";
+  margin-right: 12px;
+  font-size: 30px;
+}
+
+h4 {
+  margin: 0;
+  font-size: 26px;
+}
+
+img {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+
+.resume-video {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.resume-video:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+.sheet {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 60px 80px;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0,0,0,.15);
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar, .main {
+    width: 100%;
+    padding: 40px;
+  }
+
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+}
+.resume-video iframe {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
