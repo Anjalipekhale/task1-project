@@ -153,4 +153,17 @@ img {
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
+.resume-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.resume-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
