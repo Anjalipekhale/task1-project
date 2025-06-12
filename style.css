@@ -2,14 +2,14 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #f4f4f4;
-  font-size: 24px; /* Very large base font */
+  font-size: 24px; /* Desktop size */
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 1600px; /* Full screen wide */
+  max-width: 1600px;
   margin: auto;
   min-height: 100vh;
 }
@@ -113,6 +113,20 @@ img {
   margin: 30px auto;
   border-radius: 14px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  height: 0;
+}
+
+.resume-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 .resume-video:hover {
@@ -129,14 +143,26 @@ img {
   border-radius: 12px;
 }
 
+/* ✅ MOBILE RESPONSIVENESS */
+
 @media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
   .container {
     flex-direction: column;
   }
 
-  .sidebar, .main {
+  .sidebar,
+  .main {
     width: 100%;
-    padding: 40px;
+    padding: 20px;
+    min-width: unset;
+  }
+
+  .sheet {
+    padding: 20px;
   }
 
   .profile-pic {
@@ -144,26 +170,48 @@ img {
     height: 180px;
   }
 
+  section {
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: 0.1s;
+  }
+
   h2 {
     font-size: 26px;
   }
-}
-.resume-video iframe {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-.resume-video {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-.resume-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+
+  h4 {
+    font-size: 20px;
+  }
+
+  .sidebar li {
+    font-size: 18px;
+  }
 }
 
+@media (max-width: 480px) {
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  .sidebar li {
+    font-size: 16px;
+  }
+
+  .resume-video {
+    padding-bottom: 60%;
+  }
+}
+
+/* ✅ Text wrapping for mobile safety */
+.sidebar p, .main p, .main li {
+  word-wrap: break-word;
+}
